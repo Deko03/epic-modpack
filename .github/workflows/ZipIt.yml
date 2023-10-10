@@ -1,0 +1,14 @@
+name: ZipIt
+on:
+  push:
+    branches:
+      - action-test
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Zip Folder
+      run: zip -r release.zip . -x ".git/*" ".github/*"
+    - name: Release to Github
+      run: echo "Release"
