@@ -22,4 +22,3 @@ jobs:
         PRERELEASE: true
         WITH_V: true
         DEFAULT_BRANCH: action-test
-        RELEASE_BRANCHES: action-test
