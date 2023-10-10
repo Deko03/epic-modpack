@@ -20,4 +20,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: Deko03
         PRERELEASE: true
-        WITH_V: true
