@@ -2,7 +2,7 @@ name: ZipIt
 on:
   push:
     branches:
-      - action-test
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,4 +21,3 @@ jobs:
         REPO_OWNER: Deko03
         PRERELEASE: true
         WITH_V: true
-        DEFAULT_BRANCH: action-test
