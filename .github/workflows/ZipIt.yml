@@ -20,7 +20,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: Deko03
         PRERELEASE: true
-        WITH_V: false
+        WITH_V: true
         DEFAULT_BRANCH: action-test
         RELEASE_BRANCHES: action-test
-        INITIAL_VERSION: 0.1.0
