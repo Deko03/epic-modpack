@@ -1,0 +1,169 @@
+type = menu
+
+customization-meta {
+  identifier = de.keksuccino.drippyloadingscreen.customization.DrippyOverlayScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  restart_on_load = false
+  name = identifier_d696ec86de3a4dac
+  action = animatebackground
+}
+
+customization {
+  keepaspectratio = false
+  action = backgroundoptions
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  original_pos_size_calculation = true
+  x = 140
+  width = 360
+  action = deep_customization_element:drippy_overlay_logo
+  actionid = cb1b9ee8-7854-4db2-8745-54dc89c8b1ea1695459709849
+  y = 135
+  height = 90
+}
+
+customization {
+  custom_color_hex = #1a1a1a
+  orientation = top-left
+  hidden = false
+  x = -1000000
+  width = 0
+  action = deep_customization_element:drippy_overlay_background
+  actionid = 1a9bacd7-7f11-496c-bfcd-d4019077d0741695459709868
+  y = -1000000
+  height = 0
+}
+
+customization {
+  orientation = top-left
+  hidden = true
+  original_pos_size_calculation = true
+  x = 140
+  width = 360
+  action = deep_customization_element:drippy_overlay_progress_bar
+  actionid = ba44d50e-ffca-4556-a940-335dcc95b15a1695459709868
+  y = 294
+  height = 10
+}
+
+customization {
+  orientation = bottom-centered
+  background_color = #111111
+  bar_texture = fancymenu_data/pfp.png
+  x = -251
+  width = 502
+  bar_color = bf00ff
+  action = custom_layout_element:drippy_custom_loading_bar
+  actionid = 1316a858-3569-4ac3-bac1-81119fbe9ef71695459760418
+  y = -56
+  progress_for_element_orientation = false
+  direction = right
+  height = 19
+}
+
+customization {
+  orientation = top-left
+  enable_scrolling = false
+  shadow = true
+  scale = 2.0
+  source = Epically loading...
+  text_border = 2
+  case_mode = normal
+  source_mode = direct
+  line_spacing = 2
+  x = 220
+  width = 200
+  action = custom_layout_element:fancymenu_customization_item_text
+  actionid = 5b44dc8c-1267-4253-979e-363285dc016f1695460084069
+  y = 265
+  alignment = centered
+  base_color = ffccff
+  height = 24
+}
+
+customization {
+  orientation = top-left
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  x = 462
+  width = 158
+  action = addbutton
+  actionid = 5b669687-194b-4426-b03f-b8e2f8c72fdd1695460271609
+  y = 16
+  label = This button does nothing!
+  clicksound = fancymenu_data/AUGH.wav
+  height = 20
+}
+
+customization {
+  input_field_type = text
+  orientation = top-left
+  x = 467
+  width = 148
+  action = custom_layout_element:fancymenu_customization_item_input_field
+  actionid = 29550d7c-c108-4308-9b5c-1264c4b120d21695460866336
+  y = 106
+  max_text_length = 10000
+  height = 116
+}
+
+customization {
+  orientation = top-left
+  enable_scrolling = false
+  shadow = true
+  scale = 1.0
+  source = there is no point%n%in typing here!
+  text_border = 0
+  case_mode = normal
+  source_mode = direct
+  line_spacing = 1
+  x = 497
+  width = 89
+  action = custom_layout_element:fancymenu_customization_item_text
+  actionid = ab9bcc91-4f47-4a81-9760-238754f43b581695460893616
+  y = 78
+  alignment = centered
+  height = 22
+}
+
+customization {
+  orientation = top-left
+  max_range_value = 100
+  min_range_value = 1
+  slider_type = range
+  x = 11
+  width = 129
+  action = custom_layout_element:fancymenu_customization_item_slider
+  actionid = 2b0d9490-294a-437a-aa6f-ffaacda3209e1695461093380
+  y = 219
+  height = 20
+}
+
+customization {
+  orientation = top-left
+  enable_scrolling = true
+  shadow = true
+  scale = 1.0
+  source = slide, if you must!
+  text_border = 0
+  case_mode = normal
+  source_mode = direct
+  line_spacing = 1
+  x = 31
+  width = 89
+  action = custom_layout_element:fancymenu_customization_item_text
+  actionid = c9c69454-c025-420b-a3f1-fca0e626b7731695461120509
+  y = 203
+  alignment = left
+  height = 14
+}
+
