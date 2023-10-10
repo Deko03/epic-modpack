@@ -1,4 +1,4 @@
-name: ZipIt
+name: Zipp
 on:
   push:
     branches:
