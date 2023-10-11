@@ -10,16 +10,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: thedoctor0/zip-release@0.7.1
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         type: 'zip'
         filename: 'modpack.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.jar'
-  notify:
-    needs: build
-    name: Archive Upload
-    runs-on: ubuntu-latest
-    permissions: write-all
-    steps:
-      - uses: ncipollo/release-action@v1.13.0
-        with:
-          artifacts: "modpack.zip,foo/*.txt"
-          token: ${{ secrets.GITHUB_TOKEN }}
