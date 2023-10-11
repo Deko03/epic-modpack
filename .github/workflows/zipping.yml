@@ -12,7 +12,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'modpack.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig'
+        exclusions: '*.git* /*node_modules/* .editorconfig *.jar'
   notify:
     needs: build
     name: Archive Upload
