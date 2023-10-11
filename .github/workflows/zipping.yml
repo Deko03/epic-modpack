@@ -14,12 +14,13 @@ jobs:
         type: 'zip'
         filename: 'modpack.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
+        path: '/epic-modpack/'
   notify:
     needs: build
     permissions: write-all
     runs-on: ubuntu-latest
-    steps:  
+    steps:
       - uses: ncipollo/release-action@v1.13.0
         with:
-          filename: "modpack.zip"
+          artifact: "modpack.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
