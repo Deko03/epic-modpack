@@ -1,4 +1,4 @@
-name: Create Archive
+name: Detect Tag
 on: 
   push:
     tags:
@@ -6,9 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Archive Creation
     steps:
     - uses: actions/checkout@master
-    - name: Archive Release
     - uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
@@ -17,8 +17,9 @@ jobs:
         path: '/epic-modpack/'
   notify:
     needs: build
-    permissions: write-all
+    name: Archive Upload
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - uses: ncipollo/release-action@v1.13.0
         with:
