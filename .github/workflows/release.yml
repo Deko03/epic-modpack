@@ -1,7 +1,7 @@
 name: Archive Release
 on:
   workflow_run:
-    workflows: ["zipping"]
+    workflows: ["zipping.yml"]
     types:
       - completed
 jobs:
