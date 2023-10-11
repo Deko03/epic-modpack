@@ -1,19 +1,21 @@
-name: Zip Files
-
-on:
-  release:
-      types: [published]
-
+name: Create Archive
+on: [push]
 jobs:
-  zip-files:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: vimtor/action-zip@v1.1
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@0.7.1
+      with:
+        type: 'zip'
+        filename: 'modpack.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
+  notify:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:  
+      - uses: ncipollo/release-action@v1.12.0
         with:
-          files: /
-          dest: result.zip
-      - uses: actions/upload-artifact@v1
-        with:
-          name: my-artifact
-          path: ${{ github.workspace }}/result.zip
+          artifacts: "modpack.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
