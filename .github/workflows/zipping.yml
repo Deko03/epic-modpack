@@ -24,6 +24,7 @@ jobs:
       run : exit 1
     - run: echo "Job failed and cancelled."
   release:
+    needs: check
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
