@@ -8,9 +8,10 @@ jobs:
     name: Archive Creation
     steps:
     - uses: actions/checkout@master
-    - uses: thedoctor0/zip-release@0.7.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: thedoctor0/zip-release@0.7.1
+      with:
         type: 'zip'
         filename: 'modpack.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.jar*'
@@ -26,7 +27,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ secrets.REPOPAT }}
