@@ -13,4 +13,22 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         type: 'zip'
         filename: 'modpack.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig *.jar'
+        exclusions: '*.git* /*node_modules/* .editorconfig *.jar*'
+  check:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cancel if build did not work
+      if: ${{ needs.build.result == 'failure' }}
+      run : exit 1
+    - run: echo "Job failed and cancelled."
+  trigger:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.REPOPAT }}
+        event-type: trigger-release
+    
