@@ -12,6 +12,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: ncipollo/release-action@v1.13.0
         with:
+          tag: ${{ github.ref_name}}
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "modpack.zip"
          
