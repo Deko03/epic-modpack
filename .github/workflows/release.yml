@@ -14,5 +14,5 @@ jobs:
         with:
           tag: ${{ github.ref_name}}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "modpack.zip"
+          bodyfile: "modpack.zip"
          
