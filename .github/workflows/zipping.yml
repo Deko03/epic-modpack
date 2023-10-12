@@ -23,12 +23,17 @@ jobs:
       if: ${{ needs.build.result == 'failure' }}
       run : exit 1
     - run: echo "Job failed and cancelled."
-  trigger:
-    needs: build
+  release:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
-    - uses: peter-evans/repository-dispatch@v2
-      with:
-        token: ${{ secrets.REPOPAT }}
-        event-type: trigger-release
-    
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ncipollo/release-action@v1.13.0
+        with:
+          tag: ${{ github.ref_name}}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "modpack.zip"
+          bodyfile: "modpack.zip"
+         
