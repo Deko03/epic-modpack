@@ -9,14 +9,14 @@ jobs:
 
     steps:
     - name: Folder creation
-      run: mkdir -p test
+    - run: mkdir -p '/vendor/Deko03/epic-modpack/tree/main/test'
 
     - uses: actions/checkout@v3
     - name: Zip creation
       uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
-        filename: 'test/modpack.zip'
+        filename: '/vendor/Deko03/epic-modpack/tree/main/modpack.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.jar* test'
   check:
     needs: build
@@ -25,19 +25,9 @@ jobs:
     - name: Cancel if build did not work
       if: ${{ needs.build.result == 'failure' }}
       run : exit 1
-    - run: echo "Job failed and cancelled."
-  release:
-    needs: check
-    name: Create release
-    runs-on: ubuntu-latest
-    permissions: write-all
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: ncipollo/release-action@v1.13.0
-        with:
-          tag: ${{ github.ref_name}}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: 'test/*'
+    - name: Upload artifact
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Artifacts
+        path: '/vendor/Deko03/epic-modpack/tree/main/'
          
