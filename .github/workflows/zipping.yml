@@ -5,17 +5,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Archive Creation
+    name: Folder Creation
     steps:
+    - run: mkdir -p test
     - uses: actions/checkout@master
+    - name: Zip Creation
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     - uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
-        filename: 'modpack.zip'
-        directory: './'
-        exclusions: '*.git* /*node_modules/* .editorconfig *.jar*'
+        filename: 'test/modpack.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig *.jar* test'
   check:
     needs: build
     runs-on: ubuntu-latest
@@ -36,6 +37,5 @@ jobs:
         with:
           tag: ${{ github.ref_name}}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: './modpack.zip'
-          bodyfile: './modpack.zip'
+          artifacts: 'test/*'
          
