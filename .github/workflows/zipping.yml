@@ -16,9 +16,7 @@ jobs:
       uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
-        filename: 'modpack.zip'
-        directory: 'test/'
-        path: 'test/modpack.zip'
+        filename: 'test/modpack.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.jar* test'
   check:
     needs: build
