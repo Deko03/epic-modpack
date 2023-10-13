@@ -17,7 +17,8 @@ jobs:
       with:
         type: 'zip'
         filename: 'modpack.zip'
-        path: 'test/'
+        directory: 'test/'
+        path: 'test/modpack.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.jar* test'
   check:
     needs: build
