@@ -15,7 +15,6 @@ jobs:
     - name: Zip creation
       uses: thedoctor0/zip-release@0.7.1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
         type: 'zip'
         filename: 'test/modpack.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig *.jar* test'
