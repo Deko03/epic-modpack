@@ -6,7 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Folder creation
       run: mkdir -p '/vendor/Deko03/epic-modpack/tree/main/test'
@@ -26,7 +25,7 @@ jobs:
       if: ${{ needs.build.result == 'failure' }}
       run : exit 1
     - name: Upload artifact
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: Artifacts
         path: '/vendor/Deko03/epic-modpack/tree/main/'
