@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Folder creation
-    - run: mkdir -p '/vendor/Deko03/epic-modpack/tree/main/test'
+      run: mkdir -p '/vendor/Deko03/epic-modpack/tree/main/test'
 
     - uses: actions/checkout@v3
     - name: Zip creation
